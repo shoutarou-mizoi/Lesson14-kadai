@@ -13,23 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import models.Employee;
 import utils.DBUtil;
 
-/**
- * Servlet implementation class EmployeesDestroyServlet
- */
 @WebServlet("/employees/destroy")
 public class EmployeesDestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public EmployeesDestroyServlet() {
         super();
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
